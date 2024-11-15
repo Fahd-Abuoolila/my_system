@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="asd.png">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>web address key</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Fahd.Abuoolila</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Services
+                  </a>
+                  <div class="dropdown-menu">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button class="btn btn-info" onclick="ExportToXLSX('xlsx')">
+                            Export_xlsx
+                        </button>
+                    </div>         
+                  </div>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <div class="input-group-prepend">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        searchmood
+                      </a>
+                      <div class="dropdown-menu">
+                        <div class="text-center">
+                          <span class="btn btn-dark" onclick="getSearchMood(this.id)" id="searchName">search by name</span>
+                          <hr>
+                          <span class="btn btn-dark" onclick="getSearchMood(this.id)" id="searchDate">search by date</span>
+                        </div>         
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <input class="form-control mr-sm-2" type="search" id="searchinp" placeholder="Search" aria-label="Search">
+              </form>
+              <button onclick="searchdata()" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+            </div>
+        </nav>
+        <div class="container mt-5">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Web_name</span>
+                </div>
+                <input type="text" class="form-control" id="w_name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Web_date</span>
+                </div>
+                <input type="date" class="form-control" id="w_date" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Web_address</span>
+                </div>
+                <input type="text" class="form-control" id="w_address" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <button class="btn btn-outline-success w-100 my-2 mb-2" id="submit">add to list</button>
+            <button class="btn btn-outline-danger w-100 my-0" id="clear" onclick="clearData()" type="reset">Clear inputs</button>
+        </div>
+        <div class="container mt-5">
+            <table class="w-100" id="table">
+                <thead class="p-2 text-center"> 
+                    <tr>
+                        <th>Id</th>
+                        <th>Web_name</th>
+                        <th>Web_address</th>
+                        <th>Web_date</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <td style="height: 1px;  background-color: #28a745;"></td>
+                <td style="height: 1px;  background-color: #28a745;"></td>          
+                <td style="height: 1px;  background-color: #28a745;"></td>          
+                <td style="height: 1px;  background-color: #28a745;"></td>
+                <td style="height: 1px;  background-color: #28a745;"></td>          
+                <td style="height: 1px;  background-color: #28a745;"></td>          
+                <tbody class="p-2 text-center" id="tbody">
+                </tbody>
+            </table>
+        </div>
+        <!-- js -->
+        <script src="js/unpkg.com_xlsx@0.15.1_dist_xlsx.full.min.js"></script>
+        <script src="js/jquery-3.7.0.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/all.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
